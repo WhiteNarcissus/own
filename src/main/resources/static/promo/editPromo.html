@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script>
+        function sendPromo() {
+
+                $.ajax({
+                    type: "POST",//方法类型
+                    dataType: "json",//预期服务器返回的数据类型
+                    url: "/promo/send" ,//url
+                    data: $('#promo').serialize(),
+                    success: function (result) {
+                        console.log(result);//打印服务端返回的数据(调试用)
+                            alert("SUCCESS");
+                            window.location.href="listPromo.html";
+                    },
+                    error : function() {
+                        alert("异常！");
+                    }
+                });
+
+        }
+    </script>
+</head>
+<body  style="text-align: center">
+    <form id="promo" method="POST" >
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <label >公告标题:</label>
+        <input type="text"  name="title" maxlength="40"/><br/>
+        <br/>
+        <br/>
+        <label>公告内容:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br/><br/>
+        <textarea name="content" rows="10" cols="35"></textarea><br>
+        <br/>
+        <br/>
+
+        <input type="button" onclick="sendPromo()" value="提交" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="重置" />
+    </form>
+</body>
+</html>

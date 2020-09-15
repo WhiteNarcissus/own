@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>学生互助系统</title>
+    <link href="../css/login.css" type="text/css" rel="stylesheet"/>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/Vue.js"></script>
+    <script src="../js/login/login.js" type="text/javascript"  charset=utf-8"></script>
+</head>
+<body>
+<div class="container login_BG">
+    <div class="box">
+        <div class="logo"></div>
+    </div>
+    <div class="login_box_wrap">
+        <div class="login_title">登录界面</div>
+        <div class="login_form_box">
+            <form id="ajaxForm" method="post" action="">
+                <div class="field username_field">
+                    <label class="username_icon"><img src="../images/login_name.png"/></label>
+                    <input id="stuId" name="stuId" type="text" placeholder="请输入学号"/>
+                </div>
+                <div class="field password_field">
+                    <label class="password_icon"><img src="../images/login_pwd.png"/></label>
+                    <input id="pwdtxt" class="txt2" name="userPassword" type="password" placeholder="请输入密码"/>
+                </div>
+                <div class="rember_pwd">
+                    <input id="saveid" name="remember"  type="checkbox" value="1"/><span>下次记住我</span>
+                </div>
+                <div class="login_bt">
+                    <a href="##">登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="Error_prompt">
+        <span>ssss</span>
+    </div>
+    <div class="footer">Copyright 2019 xxp</div>
+</div>
+
+</body>
+</html>

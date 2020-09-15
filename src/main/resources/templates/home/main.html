@@ -1,0 +1,39 @@
+<html xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>首页</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        table{
+            padding:0;
+            margin:0;
+        }
+
+    </style>
+</head>
+    <body>
+        <table border="1" cellpadding="0" cellspacing="0" width="100%" height="100%">
+            <tbody>
+            <tr>
+                <td colspan="2">
+                    <iframe src="/fragments/head.html" name="head" width="100%" height="110" scrolling="no" frameborder="0"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td  width="17%" height="100%">
+                    <iframe id="left" src="/fragments/left.html" name="left" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+                </td>
+                <td  width="83%" height="100%">
+                    <iframe id="right" src="/fragments/right.html" name="right" width="100%" height="100%" scrolling="auto" frameborder="0"></iframe>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

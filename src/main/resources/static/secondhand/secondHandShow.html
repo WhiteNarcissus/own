@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)http://pyq001.1y0g.com/view3?uid=oJ642szr4G-SKgO5KFnUdr_NfWIU&from=singlemessage&isappinstalled=0 -->
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>我的朋友圈</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../css/secondhand/app.css">
+    <script src="/js/Vue.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/menu/secondhand/secondhandShow.js"></script>
+    <style type="text/css">
+        * {cursor: pointer;}
+        .weui_mask_transition {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0);
+            -webkit-transition: background .3s;
+            transition: background .3s;
+        }
+        .weui_fade_toggle {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .weui_actionsheet {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            -webkit-transform: translate(0, 100%);
+            -ms-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            z-index: 2;
+            width: 100%;
+            background-color: #EFEFF4;
+            -webkit-transition: -webkit-transform .3s;
+            transition: transform .3s;
+        }
+        .weui_actionsheet_toggle {
+            -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+        .weui_actionsheet_menu {
+            background-color: #FFFFFF;
+        }
+        .weui_actionsheet_cell:before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            border-top: 1px solid #D9D9D9;
+            -webkit-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scaleY(0.5);
+            -ms-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+        .weui_actionsheet_cell:first-child:before {
+            display: none;
+        }
+        .weui_actionsheet_cell {
+            position: relative;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 18px;
+        }
+        .weui_actionsheet_cell.title {
+            color: #999;
+        }
+        .weui_actionsheet_action {
+            margin-top: 6px;
+            background-color: #FFFFFF;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="actionSheet_wrap">
+    <div class="weui_mask_transition" id="mask" style="display: none;"></div>
+    <div class="weui_actionsheet" id="weui_actionsheet">
+        <div class="weui_actionsheet_menu">
+            <div  onclick="admire()" class="weui_actionsheet_cell play_pyq" data-scene="1">点赞</div>
+            <div onclick="Iwant()" class="weui_actionsheet_cell play_pyq" data-scene="2">我想要</div>
+        </div>
+        <div class="weui_actionsheet_action">
+            <div class="weui_actionsheet_cell" id="actionsheet_cancel">取消</div>
+        </div>
+    </div>
+</div>
+<div style="margin:0 auto;display:none;">
+    <img class="data-avt" src="/images/secondhand/0.jpg">
+</div>
+<div id="main">
+    <!--类似于个人主页-->
+    <header>
+        <img id="bg" src="/images/secondhand/bg.jpg" style="height: 210px">
+        <p id="user-name" class="cmt-list">白茶清风无别事,我在等风也等你</p>
+        <img id="avt" class="data-avt" src="/images/secondhand/0.jpg">
+    </header>
+
+
+    <div id="list">
+        <ul id="secondHandView">
+            <!--x,index in parentList-->
+            <template v-for="x in list">
+            <li >
+                <div class="po-avt-wrap">
+                    <img class="po-avt data-avt" src="/images/secondhand/0.jpg">
+                </div>
+                <div class="po-cmt">
+                    <div class="po-hd">
+                        <p class="po-name"><span class="data-name">{{ x.stuId}}</span> </p>
+                        <div class="post">
+                            <p name="content">{{ x.title}}</p>
+                            <template v-for="images in x.pushImageUrl">
+                            <p name="image">
+                                <img  v-bind:src ="images"  style="height: 80px;"/>
+                            </p>
+                            </template>
+                            <p name="price">{{ x.price}}元</p>
+                            <p name="contact">{{ x.contactType}}{{ x.contact}}</p>
+
+                        </div>
+                        <p class="time">{{ x.pushTimeCut}}前</p><img class="c-icon"  v-on:click="showActionSheet(x.stuId)" src="/images/secondhand/c.png">
+                    </div>
+                    <div class="r"></div>
+                    <div class="cmt-wrap">
+                        <div class="like"><img src="/images/secondhand/l.png">{{ x.admires}}...</div>
+                        <template v-for="reviewers in x.reviewers">
+                        <div class="cmt-list">
+                            <p><span>{{reviewers.stuId}}：</span>😘{{reviewers.message}}</p>
+                        </div>
+                        </template>
+                        <!--点击我想要是 将留言表单 提交表单提交-->
+                        <p >
+                        <form v-bind:id="'reviewers'+x.stuId" name="reviewers" style="display: none;" class="form-horizontal" onsubmit="return false" >
+                            <input v-bind:id="'message'+x.stuId" class="form-control" name="message" type="text" size="80" />
+                            <input type="button"  id="secondhandSubmit"  onclick="wantMessage()" value="留言">&nbsp;<input type="reset" value="重置">
+                        </form>
+
+                        </p>
+                    </div>
+
+                </div>
+            </li>
+            </template>
+        </ul>
+    </div>
+
+    <div id="share">
+        <div style="padding:15px;padding-bottom:20px">
+            <button id="gotoplay"  onClick="goUpload();" class="btn btn-success btn-lg btn-block">我也要发布商品</button>
+            <br>
+        </div>
+
+    </div>
+
+</div>
+<script>
+    //点击我也要上传
+    function goUpload(){
+        window.location.href="secondHandUpload.html"
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+要求是：使用消息队列
+A：Base_queen
+
+b:3001_queen
+c:3002_queen
+d:end_queen
+
+abacad ;
+根据request  中的id 去指定队列 根据接口返回status 决定是不是往下走
+
+
+

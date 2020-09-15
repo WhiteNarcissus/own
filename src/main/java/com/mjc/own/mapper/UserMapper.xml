@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.help.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.help.domain.User">
+        <id column="user_id" property="userId" jdbcType="INTEGER" />
+        <result column="stuId" jdbcType="VARCHAR" property="stuId" />
+        <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="user_phone" jdbcType="VARCHAR" property="userPhone" />
+        <result column="user_hobbit" jdbcType="VARCHAR" property="userHobbit" />
+        <result column="user_message" jdbcType="VARCHAR" property="userMessage" />
+    </resultMap>
+
+    <resultMap id="PResultMap" type="com.example.help.domain.Permission" >
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="role_id" property="roleId" jdbcType="BIGINT" />
+        <result column="permission" property="permission" jdbcType="VARCHAR" />
+        <result column="descriptiion" property="descriptiion" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <resultMap id="RResultMap" type="com.example.help.domain.Role" >
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="role" property="role" jdbcType="VARCHAR" />
+        <result column="role_descriptiion" property="roleDescriptiion" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="queryRolePermissionByUser" resultMap="PResultMap" parameterType="com.example.help.domain.User" >
+        SELECT p.id,p.permission,p.descriptiion,p.role_id FROM t_permission p
+        WHERE p.role_id =(
+        SELECT ur.role_id FROM t_user_role ur
+        LEFT JOIN t_role r ON r.id = ur.role_id
+        LEFT JOIN t_user u ON u.stuId = ur.stuId
+        WHERE u.stuId =#{stuId} )
+    </select>
+
+    <select id="queryUserById"  resultMap="BaseResultMap">
+        select *  FROM  t_user WHERE  stuId= #{stuId}
+
+    </select>
+
+
+
+    <select id="queryRoleById"  resultMap="RResultMap">
+        select *  FROM  t_user WHERE  stuId= #{stuId}
+
+    </select>
+
+
+</mapper>
