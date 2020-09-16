@@ -1,4 +1,4 @@
-package com.example.help.aspect;
+package com.mjc.own.aspect;
 
 public class RabbitMqACKAspect {
 }

@@ -1,6 +1,8 @@
-package com.example.help.service;
+package com.mjc.own.service;
 
-import com.example.help.domain.Promo;
+
+
+import com.mjc.own.domain.Promo;
 
 import java.util.List;
 

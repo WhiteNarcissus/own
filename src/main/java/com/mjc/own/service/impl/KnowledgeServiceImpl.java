@@ -1,9 +1,10 @@
-package com.example.help.service.impl;
+package com.mjc.own.service.impl;
 
-import com.example.help.common.ReturnObject;
-import com.example.help.domain.Knowledge;
-import com.example.help.mapper.KnowledgeMapper;
-import com.example.help.service.KnowledgeService;
+
+
+import com.mjc.own.domain.Knowledge;
+import com.mjc.own.mapper.KnowledgeMapper;
+import com.mjc.own.service.KnowledgeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.example.help.shiro;
+package com.mjc.own.shiro;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;

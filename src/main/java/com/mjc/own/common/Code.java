@@ -1,4 +1,4 @@
-package com.example.help.common;
+package com.mjc.own.common;
 
 /**
  * 枚举类 的用法

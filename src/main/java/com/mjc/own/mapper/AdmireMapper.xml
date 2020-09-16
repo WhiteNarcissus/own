@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.help.mapper.AdmireMapper">
-    <resultMap id="BaseResultMap" type="com.example.help.domain.Admire" >
+<mapper namespace="com.mjc.own.mapper.AdmireMapper">
+    <resultMap id="BaseResultMap" type="com.mjc.own.domain.Admire" >
         <id column="id"  jdbcType="INTEGER" property="id"  />
         <result column="stuIded"  jdbcType="VARCHAR" property="stuIded"  />
         <result column="stuId" jdbcType="VARCHAR" property="stuId"  />
@@ -9,7 +9,7 @@
         <result column="create_time" property="createTime"  jdbcType="TIMESTAMP" />
     </resultMap>
 
-    <update id="updateAdmire"  parameterType="com.example.help.domain.Admire" >
+    <update id="updateAdmire"  parameterType="com.mjc.own.domain.Admire" >
        update t_admire
        <set>
            <if test="stuIded != null ">stuIded=#{stuIded}, </if>

@@ -1,4 +1,4 @@
-package com.example.help.rabbitmq;
+package com.mjc.own.rabbitmq;
 
 public class RabbitQueueName {
 

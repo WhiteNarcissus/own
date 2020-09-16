@@ -1,4 +1,4 @@
-package com.example.help.domain;
+package com.mjc.own.domain;
 
 import org.hibernate.validator.constraints.Length;
 

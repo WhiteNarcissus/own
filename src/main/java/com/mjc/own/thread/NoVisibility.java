@@ -1,4 +1,4 @@
-package com.example.help.thread;
+package com.mjc.own.thread;
 
 /**
  * Created by gcb on 2019/4/28.

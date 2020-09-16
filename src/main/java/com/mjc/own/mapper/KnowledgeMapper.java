@@ -1,8 +1,9 @@
 package com.mjc.own.mapper;
 
 
+import com.mjc.own.domain.Knowledge;
 import org.springframework.stereotype.Repository;
-import com.example.help.domain.Knowledge;
+
 
 
 @Repository

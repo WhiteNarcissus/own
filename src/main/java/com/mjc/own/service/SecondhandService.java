@@ -1,10 +1,12 @@
-package com.example.help.service;
+package com.mjc.own.service;
 
 
-import com.example.help.domain.Admire;
-import com.example.help.domain.Reviewers;
-import com.example.help.domain.SecondHandView;
-import com.example.help.domain.Secondhand;
+
+
+import com.mjc.own.domain.Admire;
+import com.mjc.own.domain.Reviewers;
+import com.mjc.own.domain.SecondHandView;
+import com.mjc.own.domain.Secondhand;
 
 import java.util.List;
 

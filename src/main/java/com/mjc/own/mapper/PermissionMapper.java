@@ -1,8 +1,9 @@
 package com.mjc.own.mapper;
 
 
-import com.example.help.domain.Permission;
-import com.example.help.domain.User;
+
+import com.mjc.own.domain.Permission;
+import com.mjc.own.domain.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

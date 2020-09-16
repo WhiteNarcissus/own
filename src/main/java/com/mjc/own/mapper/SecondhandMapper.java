@@ -1,6 +1,7 @@
 package com.mjc.own.mapper;
 
-import com.example.help.domain.Secondhand;
+
+import com.mjc.own.domain.Secondhand;
 import org.springframework.stereotype.Repository;
 
 @Repository

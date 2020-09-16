@@ -1,9 +1,10 @@
-package com.example.help.service.impl;
+package com.mjc.own.service.impl;
 
-import com.example.help.common.DateUtil;
-import com.example.help.domain.Promo;
-import com.example.help.mapper.PromoMapper;
-import com.example.help.service.PromoService;
+
+import com.mjc.own.common.DateUtil;
+import com.mjc.own.domain.Promo;
+import com.mjc.own.mapper.PromoMapper;
+import com.mjc.own.service.PromoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

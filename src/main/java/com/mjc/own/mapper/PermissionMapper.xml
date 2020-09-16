@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.help.mapper.PermissionMapper">
-    <resultMap id="BaseResultMap" type="com.example.help.domain.Permission" >
+<mapper namespace="com.mjc.own.mapper.PermissionMapper">
+    <resultMap id="BaseResultMap" type="com.mjc.own.domain.Permission" >
         <id column="id"  jdbcType="INTEGER" property="id"  />
         <result column="role_id"  jdbcType="INTEGER" property="roleId"  />
         <result column="permission" jdbcType="VARCHAR" property="permission"  />
         <result column="description" jdbcType="VARCHAR" property="description"  />
     </resultMap>
 
-    <select id="queryRolePermissionByUser" resultMap="BaseResultMap" parameterType="com.example.help.domain.User" >
+    <select id="queryRolePermissionByUser" resultMap="BaseResultMap" parameterType="com.mjc.own.domain.User" >
         SELECT p.id,p.permission,p.description,p.role_id FROM t_permission p
         WHERE p.role_id =(
         SELECT ur.role_id FROM t_user_role ur

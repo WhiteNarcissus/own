@@ -1,8 +1,8 @@
-package com.example.help.service.impl;
+package com.mjc.own.service.impl;
 
-import com.example.help.domain.User;
-import com.example.help.mapper.UserMapper;
-import com.example.help.service.UserService;
+import com.mjc.own.domain.User;
+import com.mjc.own.mapper.UserMapper;
+import com.mjc.own.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

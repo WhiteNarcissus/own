@@ -1,11 +1,15 @@
-package com.example.help.controller;
+package com.mjc.own.controller;
 
-import com.example.help.common.Code;
-import com.example.help.common.DateUtil;
-import com.example.help.common.ReturnObject;
-import com.example.help.domain.*;
-import com.example.help.mapper.SecondhandMapper;
-import com.example.help.service.SecondhandService;
+
+
+import com.mjc.own.common.Code;
+import com.mjc.own.common.DateUtil;
+import com.mjc.own.common.ReturnObject;
+import com.mjc.own.domain.Admire;
+import com.mjc.own.domain.Reviewers;
+import com.mjc.own.domain.SecondHandView;
+import com.mjc.own.domain.Secondhand;
+import com.mjc.own.service.SecondhandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +32,7 @@ public class SecondhandController {
 
 
     @RequestMapping("/save")
-    public ReturnObject secondhandSave(String title ,String content ,String price ,String contact,String contactType,String secondhandUrl) {
+    public ReturnObject secondhandSave(String title , String content , String price , String contact, String contactType, String secondhandUrl) {
         ReturnObject<Secondhand> secondhandReturnObject  = new ReturnObject<Secondhand>();
         secondhandReturnObject.setCode(Code.SUCCESS);
         secondhandReturnObject.setMsg("商品保存成功");

@@ -1,6 +1,7 @@
 package com.mjc.own.mapper;
 
-import com.example.help.domain.Reviewers;
+
+import com.mjc.own.domain.Reviewers;
 import org.springframework.stereotype.Repository;
 
 @Repository

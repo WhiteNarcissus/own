@@ -1,6 +1,7 @@
 package com.mjc.own.mapper;
 
-import com.example.help.domain.Promo;
+
+import com.mjc.own.domain.Promo;
 import org.springframework.stereotype.Repository;
 
 @Repository

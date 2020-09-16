@@ -1,17 +1,17 @@
-package com.example.help.controller;
+package com.mjc.own.controller;
 
 
-import com.example.help.common.Code;
-import com.example.help.common.ReturnObject;
-import com.example.help.domain.AuthInfo;
-import com.example.help.domain.User;
-import com.example.help.service.ShiroService;
-import com.example.help.service.UserService;
+
+
+import com.mjc.own.common.Code;
+import com.mjc.own.common.ReturnObject;
+import com.mjc.own.domain.User;
+import com.mjc.own.service.ShiroService;
+import com.mjc.own.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,6 +1,7 @@
-package com.example.help.utils;
+package com.mjc.own.utils;
 
-import com.example.help.common.LogEnum;
+
+import com.mjc.own.common.LogEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

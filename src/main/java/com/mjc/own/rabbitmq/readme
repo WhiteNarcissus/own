@@ -1,0 +1,9 @@
+打开RabbitMQ Server的开始菜单安装目录
+
+选择RabbitMQ Command Prompt 命令行并打开，输入
+
+rabbitmq-plugins enable rabbitmq_management
+
+再启动sever 尝试访问，问题解决
+
+windows http://localhost:15672/ 进入Windows 管理界面

@@ -1,6 +1,7 @@
 package com.mjc.own.mapper;
 
-import com.example.help.domain.Admire;
+
+import com.mjc.own.domain.Admire;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -1,4 +1,4 @@
-package com.example.help.model.strategy;
+package com.mjc.own.model.strategy;
 
 
 import java.lang.annotation.Retention;

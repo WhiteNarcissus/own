@@ -1,8 +1,8 @@
-package com.example.help.controller;
+package com.mjc.own.controller;
 
 
-import com.example.help.domain.User;
-import com.example.help.service.UserService;
+import com.mjc.own.domain.User;
+import com.mjc.own.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

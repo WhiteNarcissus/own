@@ -1,16 +1,17 @@
-package com.example.help.service.impl;
+package com.mjc.own.service.impl;
 
 
 
-import com.example.help.common.Code;
-import com.example.help.common.MyException;
-import com.example.help.domain.AuthInfo;
-import com.example.help.domain.Permission;
-import com.example.help.domain.Role;
-import com.example.help.domain.User;
-import com.example.help.mapper.PermissionMapper;
-import com.example.help.mapper.UserMapper;
-import com.example.help.service.ShiroService;
+
+import com.mjc.own.common.Code;
+import com.mjc.own.common.MyException;
+import com.mjc.own.domain.AuthInfo;
+import com.mjc.own.domain.Permission;
+import com.mjc.own.domain.Role;
+import com.mjc.own.domain.User;
+import com.mjc.own.mapper.PermissionMapper;
+import com.mjc.own.mapper.UserMapper;
+import com.mjc.own.service.ShiroService;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -84,7 +85,7 @@ public class ShiroServiceImpl implements ShiroService {
                 stringRedisTemplate.opsForHash().put("AUTH",String.valueOf(user.getStuId()),authInfo.getRole()+":"+authInfo.getPermission());
             }catch (Exception e){
               e.printStackTrace();
-              throw new  MyException("将数据放入缓存失败",Code.FAIL);
+              throw new MyException("将数据放入缓存失败", Code.FAIL);
 
             }
 

@@ -1,4 +1,8 @@
-package com.example.help.model.strategy.demo;
+package com.mjc.own.model.strategy.demo;
+
+import com.mjc.own.model.strategy.demo.CutStrategy;
+import com.mjc.own.model.strategy.demo.Strategy;
+import com.mjc.own.model.strategy.demo.SumStrategy;
 
 public class Context {
     Strategy sc = null ;

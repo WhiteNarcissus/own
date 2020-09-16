@@ -1,4 +1,4 @@
-package com.example.help.common;
+package com.mjc.own.common;
 
 /**
  * Created by gcb on 2019/4/2.

@@ -1,11 +1,11 @@
-package com.example.help.service;
+package com.mjc.own.service;
 
 
 
-import com.example.help.domain.AuthInfo;
-import com.example.help.domain.Permission;
-import com.example.help.domain.Role;
-import com.example.help.domain.User;
+
+import com.mjc.own.domain.Permission;
+import com.mjc.own.domain.Role;
+import com.mjc.own.domain.User;
 import org.apache.shiro.subject.Subject;
 
 import java.util.List;

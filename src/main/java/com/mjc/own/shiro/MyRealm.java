@@ -1,10 +1,11 @@
-package com.example.help.shiro;
+package com.mjc.own.shiro;
 
 
-import com.example.help.domain.Permission;
-import com.example.help.domain.Role;
-import com.example.help.domain.User;
-import com.example.help.service.ShiroService;
+
+import com.mjc.own.domain.Permission;
+import com.mjc.own.domain.Role;
+import com.mjc.own.domain.User;
+import com.mjc.own.service.ShiroService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.AuthorizationInfo;

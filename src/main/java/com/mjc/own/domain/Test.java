@@ -1,4 +1,4 @@
-package com.example.help.domain;
+package com.mjc.own.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;

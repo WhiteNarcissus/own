@@ -1,7 +1,7 @@
-package com.example.help.service;
+package com.mjc.own.service;
 
-import com.example.help.common.ReturnObject;
-import com.example.help.domain.Knowledge;
+
+import com.mjc.own.domain.Knowledge;
 
 import java.util.List;
 

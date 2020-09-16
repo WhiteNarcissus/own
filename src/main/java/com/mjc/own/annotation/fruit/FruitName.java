@@ -1,10 +1,10 @@
-package com.example.help.annotation.fruit;
+package com.mjc.own.annotation.fruit;
 
 /**
  * Created by gcb on 2019/6/28.
  */
 
-import com.example.help.annotation.ElementType;
+
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

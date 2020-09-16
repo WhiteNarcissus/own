@@ -1,11 +1,10 @@
-package com.example.help.controller;
+package com.mjc.own.controller;
 
-import com.example.help.common.Code;
-import com.example.help.common.DateUtil;
-import com.example.help.common.ReturnObject;
-import com.example.help.domain.Promo;
-import com.example.help.service.PromoService;
-import com.example.help.service.impl.PromoServiceImpl;
+
+import com.mjc.own.common.Code;
+import com.mjc.own.common.ReturnObject;
+import com.mjc.own.domain.Promo;
+import com.mjc.own.service.PromoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;

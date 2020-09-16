@@ -1,4 +1,4 @@
-package com.example.help.domain;
+package com.mjc.own.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Id;

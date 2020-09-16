@@ -1,7 +1,7 @@
-package com.example.help.service;
+package com.mjc.own.service;
 
-import com.example.help.domain.User;
-import com.example.help.mapper.UserMapper;
+
+import com.mjc.own.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

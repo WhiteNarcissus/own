@@ -1,7 +1,9 @@
-package com.example.help.jdk8;
+package com.mjc.own.jdk8;
 
 
-import com.example.help.domain.User;
+
+
+import com.mjc.own.domain.User;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.help.annotation.fruit;
+package com.mjc.own.annotation.fruit;
 
 /**
  * Created by gcb on 2019/6/28.

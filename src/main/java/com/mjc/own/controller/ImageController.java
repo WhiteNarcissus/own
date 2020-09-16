@@ -1,8 +1,10 @@
-package com.example.help.controller;
+package com.mjc.own.controller;
 
-import com.example.help.common.Code;
-import com.example.help.common.ReturnObject;
-import com.example.help.domain.Knowledge;
+
+
+import com.mjc.own.common.Code;
+import com.mjc.own.common.ReturnObject;
+import com.mjc.own.domain.Knowledge;
 import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

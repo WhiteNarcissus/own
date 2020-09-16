@@ -1,11 +1,15 @@
-package com.example.help.service.impl;
+package com.mjc.own.service.impl;
 
-import com.example.help.common.DateUtil;
-import com.example.help.domain.*;
-import com.example.help.mapper.AdmireMapper;
-import com.example.help.mapper.ReviewersMapper;
-import com.example.help.mapper.SecondhandMapper;
-import com.example.help.service.SecondhandService;
+
+import com.mjc.own.common.DateUtil;
+import com.mjc.own.domain.Admire;
+import com.mjc.own.domain.Reviewers;
+import com.mjc.own.domain.SecondHandView;
+import com.mjc.own.domain.Secondhand;
+import com.mjc.own.mapper.AdmireMapper;
+import com.mjc.own.mapper.ReviewersMapper;
+import com.mjc.own.mapper.SecondhandMapper;
+import com.mjc.own.service.SecondhandService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

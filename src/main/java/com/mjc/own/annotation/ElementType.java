@@ -1,4 +1,4 @@
-package com.example.help.annotation;
+package com.mjc.own.annotation;
 
 /**
  * Created by gcb on 2019/6/28.
