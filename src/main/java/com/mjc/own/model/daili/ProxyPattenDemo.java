@@ -14,6 +14,8 @@ public class ProxyPattenDemo {
 
        image1.display();
 
+
+
     }
 
 
