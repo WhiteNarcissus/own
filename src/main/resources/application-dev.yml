@@ -3,17 +3,17 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/help?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/own?useUnicode=true&characterEncoding=utf-8&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: root
 
 
   mybatis:
-     mapper-locations: classpath:com.example.help.mapper/*.xml
-     type-aliases-package: com.example.help.domain
+     mapper-locations: classpath:com.mjc.own.mapper/*.xml
+     type-aliases-package: com.mjc.own.domain
      mapper:
-        mappers: com.demo.help.TkMapper
+        mappers: com.mjc.own.mapper.TkMapper
         identity: MYSQL
 
   logging:
