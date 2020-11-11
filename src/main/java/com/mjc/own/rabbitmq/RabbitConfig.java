@@ -21,6 +21,8 @@ public class RabbitConfig {
     public static final String TOPIC_EXCHANGE = "topicExchange";
     public static final String PROCESS_TOPIC_EXCHANGE = "processTopicExchange";
     public static final String SMS_TOPIC_EXCHANGE = "smsTopicExchange";
+    public static final String OC_TOPIC_EXCHANGE = "ocTopicExchange";
+    public static final String ERO_TOPIC_EXCHANGE = "eroTopicExchange";
 
     @Autowired
     private Environment env;
@@ -43,6 +45,14 @@ public class RabbitConfig {
         return new Queue(env.resolvePlaceholders(RabbitQueueName.PROCESS_PRODUCT_QUEUE));
     }
 
+    @Bean
+    public Queue ocQueue() {
+        return new Queue(env.resolvePlaceholders(RabbitQueueName.OC_QUEUE));
+    }
+    @Bean
+    public Queue eroQueue() {
+        return new Queue(env.resolvePlaceholders(RabbitQueueName.ERO_QUEUE));
+    }
 
     @Bean
     public TopicExchange smsExchange() {
@@ -53,6 +63,17 @@ public class RabbitConfig {
     public TopicExchange proceExchange() {
         return new TopicExchange(PROCESS_TOPIC_EXCHANGE);
     }
+
+    @Bean
+    public TopicExchange ocExchange() {
+        return new TopicExchange(OC_TOPIC_EXCHANGE);
+    }
+
+    @Bean
+    public TopicExchange eroExchange() {
+        return new TopicExchange(ERO_TOPIC_EXCHANGE);
+    }
+
 
     /**
      * @return
@@ -71,6 +92,17 @@ public class RabbitConfig {
                 .with(env.resolveRequiredPlaceholders(RabbitQueueName.SMS_HANDlER_QUEUE));
     }
 
+    @Bean
+    public Binding ocBing() {
+        return  BindingBuilder.bind(ocQueue()).to(ocExchange())
+                .with(env.resolveRequiredPlaceholders(RabbitQueueName.OC_QUEUE));
+    }
+
+    @Bean
+    public Binding eroBing() {
+        return  BindingBuilder.bind(eroQueue()).to(eroExchange())
+                .with(env.resolveRequiredPlaceholders(RabbitQueueName.ERO_QUEUE));
+    }
 
 
 
