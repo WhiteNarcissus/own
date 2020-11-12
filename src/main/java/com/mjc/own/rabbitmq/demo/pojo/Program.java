@@ -11,7 +11,9 @@ public class Program extends ProtoEntity {
    private static Program end = new Program();
 
    static {
-
+      end.setProgramId(Long.MIN_VALUE);
+      end.setStatus(Program.ENDFLG);
+      end.setRemark("this  is the end of Program");
    }
 
 
@@ -19,7 +21,7 @@ public class Program extends ProtoEntity {
 
    private String programCode ;
    private String programName ;
-   private String status ;
+   private Byte status ;
    private String inputField;
    private String remark ;
    private String outputField;
@@ -32,4 +34,83 @@ public class Program extends ProtoEntity {
    private Integer priority ;
 
 
+   public Long getProgramId() {
+      return programId;
+   }
+
+   public void setProgramId(Long programId) {
+      this.programId = programId;
+   }
+
+   public String getProgramCode() {
+      return programCode;
+   }
+
+   public void setProgramCode(String programCode) {
+      this.programCode = programCode;
+   }
+
+   public String getProgramName() {
+      return programName;
+   }
+
+   public void setProgramName(String programName) {
+      this.programName = programName;
+   }
+
+   public Byte getStatus() {
+      return status;
+   }
+
+   public void setStatus(Byte status) {
+      this.status = status;
+   }
+
+   public String getInputField() {
+      return inputField;
+   }
+
+   public void setInputField(String inputField) {
+      this.inputField = inputField;
+   }
+
+   public String getRemark() {
+      return remark;
+   }
+
+   public void setRemark(String remark) {
+      this.remark = remark;
+   }
+
+   public String getOutputField() {
+      return outputField;
+   }
+
+   public void setOutputField(String outputField) {
+      this.outputField = outputField;
+   }
+
+   public Task getTask() {
+      return task;
+   }
+
+   public void setTask(Task task) {
+      this.task = task;
+   }
+
+   public Action getAction() {
+      return action;
+   }
+
+   public void setAction(Action action) {
+      this.action = action;
+   }
+
+   public Integer getPriority() {
+      return priority;
+   }
+
+   public void setPriority(Integer priority) {
+      this.priority = priority;
+   }
 }

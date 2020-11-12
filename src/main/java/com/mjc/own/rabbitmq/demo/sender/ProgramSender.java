@@ -30,8 +30,30 @@ public class ProgramSender {
      */
    public void sendToProgramHandlerQueue(){
 
-
    }
+
+    /**
+     * 发送到节点队列
+     * @param Task
+     */
+    public void sendToNodeQueue(){
+    }
+
+    /**
+     * 发送到差错队列
+     * @param Task
+     */
+    public void sendToEroQueue(){
+
+    }
+
+    /**
+     * 发送到结束队列
+     * @param Task
+     */
+    public void sendToEndQueue(){
+
+    }
 
 
 }
