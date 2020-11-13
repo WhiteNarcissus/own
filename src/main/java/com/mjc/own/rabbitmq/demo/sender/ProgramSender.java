@@ -1,6 +1,10 @@
 package com.mjc.own.rabbitmq.demo.sender;
 
+import com.mjc.own.rabbitmq.RabbitConfig;
+import com.mjc.own.rabbitmq.RabbitQueueName;
+import com.mjc.own.rabbitmq.demo.pojo.Program;
 import com.mjc.own.rabbitmq.demo.pojo.ProgramConfiguration;
+import com.mjc.own.rabbitmq.demo.pojo.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,30 +32,37 @@ public class ProgramSender {
      * 发送到程序队列
      * @param program
      */
-   public void sendToProgramHandlerQueue(){
+   public void sendToProgramHandlerQueue(Program program){
 
+       String programType = program.getProgramType();
+       String queueName = env.resolveRequiredPlaceholders(env.resolveRequiredPlaceholders(RabbitQueueName.DEBUG_PREFIX+programType));
+        rabbitmqSender.convertAndSend(RabbitConfig.PROCESS_TOPIC_EXCHANGE,queueName,program);
    }
 
     /**
      * 发送到节点队列
-     * @param Task
+     * @param task
      */
-    public void sendToNodeQueue(){
+    public void sendToNodeQueue(Task task ){
+        String queueName = env.resolveRequiredPlaceholders(env.resolveRequiredPlaceholders(RabbitQueueName.OC_QUEUE));
+        rabbitmqSender.convertAndSend(RabbitConfig.OC_TOPIC_EXCHANGE,queueName,task);
     }
 
     /**
      * 发送到差错队列
-     * @param Task
+     * @param
      */
-    public void sendToEroQueue(){
-
+    public void sendToEroQueue(String erro){
+      rabbitmqSender.convertAndSend(RabbitConfig.ERO_TOPIC_EXCHANGE,erro);
     }
 
     /**
      * 发送到结束队列
-     * @param Task
+     * @param task
      */
-    public void sendToEndQueue(){
+    public void sendToEndQueue(Task task){
+        String queueName = env.resolveRequiredPlaceholders(env.resolveRequiredPlaceholders(RabbitQueueName.PROCESS_PRODUCT_QUEUE));
+        rabbitmqSender.convertAndSend(RabbitConfig.OC_TOPIC_EXCHANGE,queueName,task);
 
     }
 

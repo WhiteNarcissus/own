@@ -28,4 +28,6 @@ public class HelloSender {
         this.rabbitTemplate.convertAndSend("hello", context);
     }
 
+
+
 }

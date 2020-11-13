@@ -13,10 +13,9 @@ public class RabbitQueueName {
     //短信队列 （程序队列 执行完程序之）
     public static final String SMS_HANDlER_QUEUE =DEBUG_PREFIX +"sms_handler_queue";
 
-    //主流程队列 （节点处理队列）
     public static final String PROCESS_PRODUCT_QUEUE =DEBUG_PREFIX+ "process_product_queue";
 
-    //操作中心队列 （操作中心处理队列 规定下一节点去哪）
+    //节点处理队列（操作中心处理队列 规定下一节点去哪）
     public static final String OC_QUEUE =DEBUG_PREFIX+ "oc_queue";
 
     //异常队列 （异常队列）

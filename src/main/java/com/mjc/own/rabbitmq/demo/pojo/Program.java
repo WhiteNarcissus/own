@@ -1,6 +1,6 @@
 package com.mjc.own.rabbitmq.demo.pojo;
 
-import javafx.concurrent.Task;
+
 
 import javax.swing.*;
 import java.lang.reflect.Parameter;
@@ -21,14 +21,15 @@ public class Program extends ProtoEntity {
 
    private String programCode ;
    private String programName ;
+   private String programType ;
    private Byte status ;
    private String inputField;
    private String remark ;
    private String outputField;
    private Task task ;
    private Action action ;
-//   private Parameters inputMap ;
-//   private Parameters  outputMap ;
+   private Parameters inputMap ;
+   private Parameters  outputMap ;
 
 
    private Integer priority ;
@@ -112,5 +113,29 @@ public class Program extends ProtoEntity {
 
    public void setPriority(Integer priority) {
       this.priority = priority;
+   }
+
+   public Parameters getInputMap() {
+      return inputMap;
+   }
+
+   public void setInputMap(Parameters inputMap) {
+      this.inputMap = inputMap;
+   }
+
+   public Parameters getOutputMap() {
+      return outputMap;
+   }
+
+   public void setOutputMap(Parameters outputMap) {
+      this.outputMap = outputMap;
+   }
+
+   public String getProgramType() {
+      return programType;
+   }
+
+   public void setProgramType(String programType) {
+      this.programType = programType;
    }
 }
