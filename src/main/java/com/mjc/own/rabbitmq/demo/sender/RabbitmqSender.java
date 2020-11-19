@@ -23,7 +23,7 @@ public class RabbitmqSender {
      * 指定交换机
      */
     public  void  convertAndSend(String exchange ,String queueName ,Object object){
-        Message message =null ;
+        Message message =makeMessage(queueName,object) ;
         amqpTemplate.convertAndSend(exchange,queueName,message);
         logger.info("{} FINISHED" ,queueName);
     }
@@ -32,7 +32,7 @@ public class RabbitmqSender {
      */
 
     public  void  convertAndSend(String queueName ,Object object){
-        Message message =null ;
+        Message message =makeMessage(queueName,object) ;
         amqpTemplate.convertAndSend(queueName,message);
         logger.info("{} FINISHED" ,queueName);
     }

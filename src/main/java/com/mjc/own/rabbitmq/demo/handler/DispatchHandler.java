@@ -9,10 +9,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.AmqpHeaders;
+import org.springframework.stereotype.Component;
 
-import java.nio.channels.Channel;
+import com.rabbitmq.client.Channel;
 
 //节点分发类
+@Component
 public class DispatchHandler extends BaseProgramHandler {
 
     private final static Logger logger = LoggerFactory.getLogger(DispatchHandler.class);
@@ -36,7 +38,7 @@ public class DispatchHandler extends BaseProgramHandler {
 
     private void handlerTask(Task task){
 
-        System.out.println(task);
+        System.out.println(task+"1111");
 
     }
 
