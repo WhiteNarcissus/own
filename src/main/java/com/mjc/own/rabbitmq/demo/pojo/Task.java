@@ -2,16 +2,17 @@ package com.mjc.own.rabbitmq.demo.pojo;
 
 import org.springframework.util.CollectionUtils;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Task extends ProtoEntity {
+public class Task extends ProtoEntity  implements Serializable {
 
     public static final String PROCESSING = "processing";
     public static final String SUCCESS ="success" ;
 
     public static final String FAIL = "fail";
 
-    private static final long serialVersionUID = -323423424244444443L;
+   private static final long serialVersionUID = -1821565022367830297l;
 
     private Long taskId ;
 

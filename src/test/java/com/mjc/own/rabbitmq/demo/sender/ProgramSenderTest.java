@@ -1,5 +1,7 @@
 package com.mjc.own.rabbitmq.demo.sender;
 
+import com.mjc.own.rabbitmq.RabbitConfig;
+import com.mjc.own.rabbitmq.RabbitQueueName;
 import com.mjc.own.rabbitmq.demo.pojo.Task;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,10 +17,14 @@ import static org.junit.Assert.*;
 public class ProgramSenderTest {
     @Autowired
     private ProgramSender programSender ;
+    @Autowired
+    private RabbitmqSender rabbitmqSender ;
     @Test
     public void sendToNodeQueue() {
-       Task task = new Task();
-       task.setNodeCode("CS1");
-       programSender.sendToNodeQueue(task);
+
+        //rabbitmqSender.convertAndSend(RabbitConfig.OC_TOPIC_EXCHANGE, RabbitQueueName.OC_QUEUE,"zhans222 ");
+        Task task = new Task();
+        task.setNodeCode("sss");
+        programSender.sendToNodeQueue(task);
     }
 }

@@ -6,16 +6,13 @@ package com.mjc.own.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Target({ElementType.PARAMETER ,ElementType.METHOD})
-@Retention(RUNTIME)
+@Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Payload {
 

@@ -21,13 +21,26 @@ public class DispatchHandler extends BaseProgramHandler {
 
     @RabbitListener(queues = RabbitQueueName.OC_QUEUE)
     public void listen(@Payload Task task,
-                       @Header long deliverTag,
-                       @Header(value = AmqpHeaders.MESSAGE_ID, defaultValue = "") String messageId,
                        Channel channel) {
-        logger.info("mqName:{} ,接受消息，caseId：{}，nodeCode：{},messageId:{}", RabbitQueueName.OC_QUEUE, task.getCaseId(), task.getNodeCode(), messageId);
+        logger.info("mqName:{} ,接受消息，caseId：{}，nodeCode：{},messageId:{}", RabbitQueueName.OC_QUEUE, task.getCaseId(), task.getNodeCode());
 
         try {
             handlerTask(task);
+        } catch (Exception e) {
+
+        }
+
+
+    }
+
+
+    @RabbitListener(queues = RabbitQueueName.OC_QUEUE)
+    public void listen(@Payload String task,
+                       Channel channel) {
+      //  logger.info("mqName:{} ,接受消息，caseId：{}，nodeCode：{},messageId:{}", RabbitQueueName.OC_QUEUE, task.getCaseId(), task.getNodeCode(), messageId);
+
+        try {
+            System.out.println(task+"1111");
         } catch (Exception e) {
 
         }
