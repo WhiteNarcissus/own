@@ -4,6 +4,7 @@ package com.mjc.own.rabbitmq.demo.handler;
 import com.mjc.own.annotation.Header;
 import com.mjc.own.annotation.Payload;
 import com.mjc.own.rabbitmq.RabbitQueueName;
+import com.mjc.own.rabbitmq.demo.pojo.Program;
 import com.mjc.own.rabbitmq.demo.pojo.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,22 +35,14 @@ public class DispatchHandler extends BaseProgramHandler {
     }
 
 
-    @RabbitListener(queues = RabbitQueueName.OC_QUEUE)
-    public void listen(@Payload String task,
-                       Channel channel) {
-      //  logger.info("mqName:{} ,接受消息，caseId：{}，nodeCode：{},messageId:{}", RabbitQueueName.OC_QUEUE, task.getCaseId(), task.getNodeCode(), messageId);
-
-        try {
-            System.out.println(task+"1111");
-        } catch (Exception e) {
-
-        }
-
+    @Override
+    public void execute(Program program, Channel channel) {
 
     }
 
-
     private void handlerTask(Task task){
+
+
 
         System.out.println(task+"1111");
 
